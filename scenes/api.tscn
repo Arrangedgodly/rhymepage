@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8lwhdrr61fj4"]
+
+[ext_resource type="Script" path="res://scripts/api.gd" id="1_5xiwb"]
+
+[node name="Api" type="Node"]
+script = ExtResource("1_5xiwb")
+
+[node name="Rhyme" type="HTTPRequest" parent="."]

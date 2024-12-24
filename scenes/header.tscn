@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ti6fcat8qn0"]
+
+[ext_resource type="FontFile" uid="uid://1voflxe7ic3s" path="res://assets/fonts/Some Kinda Madness.otf" id="1_bpfrt"]
+[ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="2_47x1y"]
+
+[node name="Header" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bpfrt")
+theme_override_font_sizes/font_size = 32
+text = "RHYME"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_47x1y")
+theme_override_font_sizes/font_size = 32
+text = "PAGE"

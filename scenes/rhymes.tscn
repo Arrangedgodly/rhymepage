@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://h5x6hoaxuvau"]
+
+[ext_resource type="Script" path="res://scripts/rhymes.gd" id="1_g4nmy"]
+[ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="1_i2nlm"]
+
+[node name="Rhymes" type="VBoxContainer"]
+offset_right = 242.0
+offset_bottom = 61.0
+script = ExtResource("1_g4nmy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_i2nlm")
+theme_override_font_sizes/font_size = 24
+text = "Rhymes"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Sort" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Score (High to Low)"
+popup/item_1/text = "Score (Low to High)"
+popup/item_1/id = 1
+popup/item_2/text = "Max Syllables (High to Low)"
+popup/item_2/id = 3
+popup/item_3/text = "Max Syllables (Low to High)"
+popup/item_3/id = 2
+
+[node name="Results" type="HBoxContainer" parent="."]
+layout_mode = 2

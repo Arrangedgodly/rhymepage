@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c046gu8156x2n"]
+
+[ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="1_cev7j"]
+[ext_resource type="Script" path="res://scripts/result.gd" id="2_vsbqa"]
+
+[node name="Result" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_cev7j")
+script = ExtResource("2_vsbqa")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

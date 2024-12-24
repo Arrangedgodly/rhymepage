@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dii4dox2pixpl"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_3qynm"]
+[ext_resource type="PackedScene" uid="uid://d0ti6fcat8qn0" path="res://scenes/header.tscn" id="1_um82m"]
+[ext_resource type="PackedScene" uid="uid://c8lwhdrr61fj4" path="res://scenes/api.tscn" id="2_ci3gg"]
+[ext_resource type="PackedScene" uid="uid://h5x6hoaxuvau" path="res://scenes/rhymes.tscn" id="3_t8wk3"]
+[ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="4_o65fp"]
+[ext_resource type="Script" path="res://scripts/body.gd" id="6_tr6n5"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3qynm")
+
+[node name="Header" parent="." instance=ExtResource("1_um82m")]
+layout_mode = 1
+offset_bottom = 35.0
+
+[node name="Api" parent="." instance=ExtResource("2_ci3gg")]
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="LeftMenu" type="VBoxContainer" parent="Grid"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Rhymes" parent="Grid/LeftMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+
+[node name="CenterMenu" type="VBoxContainer" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Body" type="TextEdit" parent="Grid/CenterMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_o65fp")
+placeholder_text = "Start writing here"
+scroll_fit_content_height = true
+script = ExtResource("6_tr6n5")
+
+[node name="RightMenu" type="VBoxContainer" parent="Grid"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[connection signal="text_changed" from="Grid/CenterMenu/Body" to="Grid/CenterMenu/Body" method="_on_text_changed"]
