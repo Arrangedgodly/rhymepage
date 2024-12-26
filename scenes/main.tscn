@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3qynm"]
 [ext_resource type="PackedScene" uid="uid://d0ti6fcat8qn0" path="res://scenes/header.tscn" id="1_um82m"]
 [ext_resource type="PackedScene" uid="uid://c8lwhdrr61fj4" path="res://scenes/api.tscn" id="2_ci3gg"]
-[ext_resource type="PackedScene" uid="uid://h5x6hoaxuvau" path="res://scenes/rhymes.tscn" id="3_t8wk3"]
+[ext_resource type="PackedScene" uid="uid://h5x6hoaxuvau" path="res://scenes/results.tscn" id="3_t8wk3"]
 [ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="4_o65fp"]
 [ext_resource type="Script" path="res://scripts/body.gd" id="6_tr6n5"]
 
@@ -41,6 +41,24 @@ alignment = 1
 layout_mode = 2
 api = NodePath("../../../Api")
 
+[node name="Adjectives" parent="Grid/LeftMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "adjective"
+title_name = "Adjectives"
+
+[node name="SoundAlikes" parent="Grid/LeftMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "sound_alike"
+title_name = "Sound Alikes"
+
+[node name="Nouns" parent="Grid/LeftMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "noun"
+title_name = "Related Nouns"
+
 [node name="CenterMenu" type="VBoxContainer" parent="Grid"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -58,5 +76,29 @@ script = ExtResource("6_tr6n5")
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
+
+[node name="Words" parent="Grid/RightMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "word"
+title_name = "Related Words"
+
+[node name="Synonyms" parent="Grid/RightMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "synonym"
+title_name = "Synonyms"
+
+[node name="Antonyms" parent="Grid/RightMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "antonym"
+title_name = "Antonyms"
+
+[node name="FreqFollowers" parent="Grid/RightMenu" node_paths=PackedStringArray("api") instance=ExtResource("3_t8wk3")]
+layout_mode = 2
+api = NodePath("../../../Api")
+request_type = "freq_follower"
+title_name = "Frequent Followers"
 
 [connection signal="text_changed" from="Grid/CenterMenu/Body" to="Grid/CenterMenu/Body" method="_on_text_changed"]

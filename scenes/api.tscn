@@ -6,3 +6,17 @@
 script = ExtResource("1_5xiwb")
 
 [node name="Rhyme" type="HTTPRequest" parent="."]
+
+[node name="Adjective" type="HTTPRequest" parent="."]
+
+[node name="SoundAlike" type="HTTPRequest" parent="."]
+
+[node name="Noun" type="HTTPRequest" parent="."]
+
+[node name="Word" type="HTTPRequest" parent="."]
+
+[node name="Synonym" type="HTTPRequest" parent="."]
+
+[node name="Antonym" type="HTTPRequest" parent="."]
+
+[node name="FreqFollower" type="HTTPRequest" parent="."]

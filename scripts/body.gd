@@ -25,3 +25,8 @@ func get_last_word(input_text: String) -> String:
 	
 	# Return the last word
 	return words[-1]
+
+func add_last_word(new_text: String) -> void:
+	text = text + new_text + " "
+	check_ready = true
+	_on_text_changed()
