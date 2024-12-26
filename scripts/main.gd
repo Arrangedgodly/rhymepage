@@ -7,4 +7,4 @@ func _ready() -> void:
 	body.new_last_word.connect(_on_body_new_last_word)
 	
 func _on_body_new_last_word(new_word: String) -> void:
-	pass
+	api.rhyme_request(new_word)

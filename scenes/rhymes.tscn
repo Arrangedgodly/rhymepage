@@ -31,5 +31,8 @@ popup/item_2/id = 3
 popup/item_3/text = "Max Syllables (Low to High)"
 popup/item_3/id = 2
 
-[node name="Results" type="HBoxContainer" parent="."]
+[node name="Results" type="GridContainer" parent="."]
 layout_mode = 2
+columns = 4
+
+[connection signal="item_selected" from="HBoxContainer/Sort" to="." method="_on_sort_item_selected"]
