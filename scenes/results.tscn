@@ -4,11 +4,14 @@
 [ext_resource type="FontFile" uid="uid://cqdw8jtdo3441" path="res://assets/fonts/Scrambled Tofu.otf" id="1_i2nlm"]
 
 [node name="Results" type="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(250, 200)
 offset_right = 242.0
 offset_bottom = 61.0
 script = ExtResource("1_g4nmy")
 
 [node name="Label" type="Label" parent="."]
+layout_direction = 1
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_i2nlm")
