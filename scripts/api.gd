@@ -20,7 +20,7 @@ const REQUEST_TYPES = {
 	"freq_follower": "rel_bga"
 }
 const BASE_URL = "https://api.datamuse.com/words?"
-const END_URL = "&v=enwiki&max=16"
+const END_URL = "&v=enwiki&max=50"
 
 # Store HTTP requests and results
 var requests = {}

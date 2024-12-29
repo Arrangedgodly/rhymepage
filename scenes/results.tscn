@@ -5,7 +5,7 @@
 
 [node name="Results" type="VBoxContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(250, 200)
+custom_minimum_size = Vector2(250, 150)
 offset_right = 242.0
 offset_bottom = 61.0
 script = ExtResource("1_g4nmy")
@@ -26,8 +26,13 @@ alignment = 1
 [node name="Sort" type="OptionButton" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Results" type="GridContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
-columns = 4
+horizontal_scroll_mode = 0
+
+[node name="Results" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+columns = 3
 
 [connection signal="item_selected" from="HBoxContainer/Sort" to="." method="_on_sort_item_selected"]

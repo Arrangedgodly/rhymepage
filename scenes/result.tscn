@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://scripts/result.gd" id="2_vsbqa"]
 
 [node name="Result" type="Button"]
+custom_minimum_size = Vector2(100, 30)
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("1_cev7j")
+text_overrun_behavior = 3
 script = ExtResource("2_vsbqa")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

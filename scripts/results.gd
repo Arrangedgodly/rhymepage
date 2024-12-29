@@ -5,7 +5,7 @@ signal word_selected(new_word: String)
 @export var request_type: String = "rhyme"  # Default to rhyme, can be set in editor
 @export var title_name: String = "Rhymes"
 
-@onready var results_container: GridContainer = $Results
+@onready var results_container: GridContainer = $ScrollContainer/Results
 @onready var sort_option: OptionButton = $HBoxContainer/Sort
 @onready var label: Label = $Label
 
